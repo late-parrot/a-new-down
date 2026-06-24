@@ -2,6 +2,7 @@ extends Node2D
 
 
 var level = 0
+var win_scene = preload("res://scenes/win.tscn")
 
 
 func _ready() -> void:
@@ -28,4 +29,5 @@ func next_level() -> void:
 	load_level(level)
 
 func win() -> void:
-	pass
+	add_child(win_scene.instantiate())
+	%Player.disabled = true
