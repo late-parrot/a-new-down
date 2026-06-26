@@ -3,12 +3,7 @@
 [ext_resource type="Script" uid="uid://ddy7curvtm44c" path="res://scripts/level.gd" id="1_jplvn"]
 [ext_resource type="TileSet" uid="uid://c7q7s2k0k865h" path="res://resources/tileset.tres" id="2_jplvn"]
 [ext_resource type="PackedScene" uid="uid://bf0et7rsoan41" path="res://scenes/player.tscn" id="3_lco5i"]
-[ext_resource type="Shader" uid="uid://du6u0065o0smw" path="res://resources/pixelate.gdshader" id="4_6apd1"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fa6xv"]
-shader = ExtResource("4_6apd1")
-shader_parameter/amount = 1.0
-shader_parameter/max_pixel_size = 2
+[ext_resource type="Material" uid="uid://unaos2ic0l7x" path="res://resources/pixelate_material.tres" id="4_jplvn"]
 
 [node name="UIEmbed" type="Node2D" unique_id=1368573361]
 
@@ -39,7 +34,7 @@ grow_vertical = 2
 color = Color(0.13333334, 0.1254902, 0.20392157, 1)
 
 [node name="Pixelate" type="ColorRect" parent="." unique_id=1133039962]
-material = SubResource("ShaderMaterial_fa6xv")
+material = ExtResource("4_jplvn")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

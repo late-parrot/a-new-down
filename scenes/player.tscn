@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://ciuus24kiqvsl" path="res://assets/sfx/sfx_movement_jump13_landing.wav" id="2_g2els"]
 [ext_resource type="AudioStream" uid="uid://2lc13pj1vw6j" path="res://assets/sfx/sfx_movement_jump13.wav" id="2_qhqgy"]
 [ext_resource type="AudioStream" uid="uid://by323i565xtkm" path="res://assets/sfx/sfx_sounds_negative1.wav" id="4_dqkch"]
+[ext_resource type="AudioStream" uid="uid://bscmap21f0rdf" path="res://assets/sfx/sfx_sounds_powerup6.wav" id="5_qlg0r"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3vyb7"]
 rough = true
@@ -83,15 +84,23 @@ shape = SubResource("CircleShape2D_ccjeu")
 unique_name_in_owner = true
 stream = ExtResource("2_qhqgy")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="Land" type="AudioStreamPlayer2D" parent="." unique_id=707009637]
 unique_name_in_owner = true
 stream = ExtResource("2_g2els")
 volume_db = -5.0
+bus = &"SFX"
 
 [node name="Death" type="AudioStreamPlayer2D" parent="." unique_id=1922447870]
 unique_name_in_owner = true
 stream = ExtResource("4_dqkch")
+bus = &"SFX"
+
+[node name="Win" type="AudioStreamPlayer2D" parent="." unique_id=1418690415]
+unique_name_in_owner = true
+stream = ExtResource("5_qlg0r")
+bus = &"SFX"
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="body_entered" from="Collisions/HurtBox" to="." method="_on_hurt_box_body_entered"]

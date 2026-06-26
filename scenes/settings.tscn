@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://qd7d04nxtcd7"]
+
+[ext_resource type="Theme" uid="uid://6tfp3qedvyy7" path="res://resources/theme.tres" id="1_5p8wc"]
+[ext_resource type="Script" uid="uid://b5k4kf8bbrc0m" path="res://scripts/settings.gd" id="2_r6d6q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7t6u4"]
+font_size = 12
+font_color = Color(0.7941207, 0.7941206, 0.7941206, 1)
+
+[node name="Settings" type="Control" unique_id=2088297075]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5p8wc")
+script = ExtResource("2_r6d6q")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1740862254]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.13725491, 0.1254902, 0.20392157, 0.44313726)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1138335518]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=1930117941]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer" unique_id=1629231807]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=118517772]
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=309844151]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+columns = 2
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer" unique_id=878949641]
+layout_mode = 2
+columns = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer/GridContainer" unique_id=1154433132]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.37413925, 0.37413928, 0.37413922, 1)
+text = "Master"
+label_settings = SubResource("LabelSettings_7t6u4")
+
+[node name="Master" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer/GridContainer" unique_id=2107254249]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="Label2" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer/GridContainer" unique_id=1529533917]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.37413925, 0.37413928, 0.37413922, 1)
+text = "Music"
+label_settings = SubResource("LabelSettings_7t6u4")
+
+[node name="Music" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer/GridContainer" unique_id=1325130960]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="Label3" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer/GridContainer" unique_id=2025471185]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.37413925, 0.37413928, 0.37413922, 1)
+text = "SFX"
+label_settings = SubResource("LabelSettings_7t6u4")
+
+[node name="SFX" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer/GridContainer" unique_id=458436016]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="GridContainer2" type="GridContainer" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer" unique_id=1202887900]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer/GridContainer2" unique_id=872744802]
+layout_mode = 2
+text = "Pixelation Effect"
+label_settings = SubResource("LabelSettings_7t6u4")
+
+[node name="Pixelation" type="OptionButton" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer/GridContainer2" unique_id=375160512]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.79607844, 0.79607844, 0.79607844, 1)
+theme_override_font_sizes/font_size = 12
+selected = 0
+item_count = 3
+popup/item_0/text = "On"
+popup/item_0/id = 0
+popup/item_1/text = "Reduced"
+popup/item_1/id = 1
+popup/item_2/text = "Off"
+popup/item_2/id = 2
+
+[node name="Back" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=202685570]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "BACK"
+
+[connection signal="value_changed" from="CenterContainer/PanelContainer/VBoxContainer/GridContainer/GridContainer/Master" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="CenterContainer/PanelContainer/VBoxContainer/GridContainer/GridContainer/Music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="CenterContainer/PanelContainer/VBoxContainer/GridContainer/GridContainer/SFX" to="." method="_on_sfx_value_changed"]
+[connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/GridContainer/GridContainer2/Pixelation" to="." method="_on_pixelation_item_selected"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

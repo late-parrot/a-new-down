@@ -11,8 +11,10 @@ script = ExtResource("1_ds1ap")
 unique_name_in_owner = true
 stream = ExtResource("2_uxlbg")
 volume_db = -25.0
+bus = &"SFX"
 
 [node name="Select" type="AudioStreamPlayer" parent="." unique_id=308691426]
 unique_name_in_owner = true
 stream = ExtResource("3_es7ss")
 volume_db = -25.0
+bus = &"SFX"

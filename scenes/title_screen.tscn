@@ -4,6 +4,8 @@
 [ext_resource type="Theme" uid="uid://6tfp3qedvyy7" path="res://resources/theme.tres" id="1_s4lrb"]
 [ext_resource type="Script" uid="uid://h1vdulox8fbh" path="res://scripts/title_screen.gd" id="1_sa3yf"]
 [ext_resource type="PackedScene" uid="uid://bvuq3yprha5up" path="res://scenes/credits.tscn" id="4_mgrm8"]
+[ext_resource type="PackedScene" uid="uid://dij4idb66uyff" path="res://scenes/hud.tscn" id="5_dc4i4"]
+[ext_resource type="PackedScene" uid="uid://qd7d04nxtcd7" path="res://scenes/settings.tscn" id="6_e54dn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7t6u4"]
 font_size = 32
@@ -111,6 +113,13 @@ text = "QUIT"
 
 [node name="Credits" parent="." unique_id=1715589169 instance=ExtResource("4_mgrm8")]
 unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="HUD" parent="." unique_id=1180705377 instance=ExtResource("5_dc4i4")]
+layout_mode = 1
+
+[node name="Settings" parent="." unique_id=2088297075 instance=ExtResource("6_e54dn")]
 visible = false
 layout_mode = 1
 

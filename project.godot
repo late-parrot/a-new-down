@@ -19,6 +19,7 @@ config/icon="uid://btbablwv7l8or"
 
 Music="*uid://cfkbuc8o7okgy"
 UISound="*uid://dm85eai4cb1pj"
+Game="*uid://0f4247miel5j"
 
 [display]
 

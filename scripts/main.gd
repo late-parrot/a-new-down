@@ -1,6 +1,8 @@
 extends Node2D
 
 
+@onready var settings = $UI/Settings
+
 var level = 0
 var win_scene = preload("res://scenes/win.tscn")
 

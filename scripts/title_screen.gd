@@ -1,6 +1,8 @@
 extends Control
 
 
+@onready var settings = $Settings
+
 var credits = false
 
 var controller: bool = false:
@@ -15,6 +17,9 @@ var controller: bool = false:
 			var focused := get_viewport().gui_get_focus_owner()
 			if focused:
 				focused.release_focus()
+
+func _ready():
+	Game.pixelation_material = $UIEmbed/Pixelate.material
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventJoypadButton and event.pressed:
