@@ -1,9 +1,14 @@
 extends Node2D
 
 
+signal level_changed(int)
+
 @onready var settings = $UI/Settings
 
-var level = 0
+var level = 0:
+	set(v):
+		emit_signal("level_changed", v)
+		level = v
 var win_scene = preload("res://scenes/win.tscn")
 
 

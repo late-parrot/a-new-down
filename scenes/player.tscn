@@ -80,6 +80,14 @@ collision_mask = 16
 [node name="Collision" type="CollisionShape2D" parent="Collisions/StickyBox" unique_id=1320232928]
 shape = SubResource("CircleShape2D_ccjeu")
 
+[node name="RotatorBox" type="Area2D" parent="Collisions" unique_id=1201140921]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 32
+
+[node name="Collision" type="CollisionShape2D" parent="Collisions/RotatorBox" unique_id=216705751]
+shape = SubResource("CircleShape2D_ccjeu")
+
 [node name="Jump" type="AudioStreamPlayer2D" parent="." unique_id=887235369]
 unique_name_in_owner = true
 stream = ExtResource("2_qhqgy")
@@ -106,3 +114,4 @@ bus = &"SFX"
 [connection signal="body_entered" from="Collisions/HurtBox" to="." method="_on_hurt_box_body_entered"]
 [connection signal="body_entered" from="Collisions/GoalBox" to="." method="_on_goal_box_body_entered"]
 [connection signal="body_entered" from="Collisions/StickyBox" to="." method="_on_sticky_box_body_entered"]
+[connection signal="body_entered" from="Collisions/RotatorBox" to="." method="_on_rotator_box_body_entered"]

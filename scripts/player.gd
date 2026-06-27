@@ -95,6 +95,10 @@ func _on_sticky_box_body_entered(_body: Node2D) -> void:
 	await get_tree().create_timer(0.2).timeout
 	can_launch = true
 
+func _on_rotator_box_body_entered(_body: Node2D) -> void:
+	var level = main.get_node("Level")
+	level.rotation_direction *= -1
+
 func _on_body_shape_entered(body_rid: RID, _body: Node, body_shape_index: int, _local_shape_index: int) -> void:
 	var shape = {"body_rid": body_rid, "shape_index": body_shape_index}
 	if shape not in old_shapes:
